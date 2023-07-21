@@ -46,10 +46,13 @@
   font-weight: bold;
   background-color: var(--primary-color);
 }
-.header-first ul li h3 {
-  align-self: flex-end;
+.header-first ul li img {
+  /* align-self: flex-end;
   font-family: "Kaushan Script", cursive;
-  font-weight: lighter;
+  font-weight: lighter; */
+  height: 70px;
+  width: 75px;
+  /* background-color: red; */
 }
 .header-second {
   display: flex;
