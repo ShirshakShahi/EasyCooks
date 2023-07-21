@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Varela&display=swap");
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+}
+:root {
+  --primary-color: #f6f2eb;
+  --secondary-color: #fec887;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.main-container {
+  background-color: white;
+  border-radius: 10%;
+}
+
+.card {
+  /* background-color: transparent; */
+  height: 550px;
+  width: 350px;
+  margin: 30px;
+}
+
+.card-heading {
+  height: 25%;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-heading > h2 {
+  font-family: "Mukta", sans-serif;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0;
+}
+input {
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 10px;
+  width: 75%;
+  height: 35px;
+  margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+  }
+  
+
+p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+button {
+  color: black;
+  background-color: var(--secondary-color);
+  height: 35px;
+  width: 75%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e9ba80;
+}
+
+button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card-footer-items {
+  text-align: center;
+  border: 1px solid #ccc;
+  width: 100px;
+  padding: 5px;
+  margin: 0px 3px;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+.card-footer-items:hover {
+  cursor: pointer;
+}
+
+.sign-up {
+  font-weight: bolder;
+}
+
+.error {
+  color: rgb(145, 129, 129);
+  font-size: 0.7rem;
+}
+
+.success {
+  color: rgb(8, 210, 8);
+}
+
+.side-image{
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  flex-direction: column;
+  /* width: 250px; */
+}
+.side-image>p{
+  width: 350px;
+}
