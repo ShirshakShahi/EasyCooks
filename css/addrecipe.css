@@ -22,10 +22,12 @@
 .main-container {
   background-color: white;
   border-radius: 5%;
+  overflow-y: hidden;
+  /* overflow-x: hidden; */
 }
 
 .card {
-  height: 650px;
+  height: 620px;
   width: 1000px;
   margin: 30px;
 }
@@ -37,7 +39,6 @@ input[type="text"] {
   margin-left: 1.3em;
   width: 200px;
   font-size: 1.8rem;
-  /* display: block; */
 }
 
 .form-header {
@@ -52,24 +53,7 @@ input[type="text"] {
   font-family: sans-serif;
 }
 
-.ingredients {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-}
 
-.ingredients input[type="text"] {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  outline: none;
-  margin-left: 1.3em;
-  width: 350px;
-  font-size: 0.9rem;
-  margin-top: 25px;
-}
-.ingredients input[type="text"]:focus {
-  font-size: 1.3rem;
-}
 
 .ingredients-left,
 .ingredients-right {
@@ -78,30 +62,13 @@ input[type="text"] {
   justify-content: center;
 }
 
-.description {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-}
-.description input[type="text"] {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  outline: none;
-  margin-left: 1.3em;
-  width: 900px;
-  font-size: 0.9rem;
-  margin-top: 25px;
-}
-.description input[type="text"]:focus {
-  font-size: 1.3rem;
-}
 
 .button {
   display: flex;
   height: 50px;
   justify-content: end;
   align-items: center;
-  margin: -65px 30px 0 0;
+  margin: 15px 30px 0 0;
 }
 
 .button > button {
@@ -116,4 +83,8 @@ input[type="text"] {
 button:hover {
   cursor: pointer;
   background-color: #e9ba80;
+}
+
+textArea{
+  resize: none;
 }
