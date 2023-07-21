@@ -10,8 +10,95 @@
   --secondary-color: #fec887;
 }
 
+.header {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  height: 9vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.header-first {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background-color: var(--primary-color);
+}
+
+.header-first ul {
+  display: flex;
+  width: 50vw;
+  justify-content: space-between;
+}
+
+.header-first ul li {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+.header-first ul li a {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin: 0px 10px;
+  color: #000000;
+  font-weight: bold;
+  background-color: var(--primary-color);
+}
+.header-first ul li img {
+  height: 65px;
+  width: 100px;
+  background-color: transparent;
+}
+.header-second {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  background-color: var(--primary-color);
+}
+
+.button-control {
+  background-color: var(--secondary-color);
+
+  height: 30px;
+  width: 100px;
+  margin: 0px 15px;
+  border: none;
+  border-radius: 7px;
+}
+
+.button-control a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.fa-house {
+  margin-left: 15px;
+  font-size: 1.5rem;
+  color: rgb(90, 79, 79);
+}
+
+.pfp-container {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+}
+
+.pfp-container > img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
 .container {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -22,7 +109,7 @@
 .main-container {
   background-color: white;
   border-radius: 5%;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   /* overflow-x: hidden; */
 }
 

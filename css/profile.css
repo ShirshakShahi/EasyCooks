@@ -16,11 +16,13 @@
   width: 100vw;
   justify-content: space-between;
   height: 9vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 }
 
 .header-first {
   display: flex;
-  /* justify-content: flex-start; */
   align-items: center;
   flex: 1;
   background-color: var(--primary-color);
@@ -28,6 +30,8 @@
 
 .header-first ul {
   display: flex;
+  width: 50vw;
+  justify-content: space-between;
 }
 
 .header-first ul li {
@@ -47,12 +51,9 @@
   background-color: var(--primary-color);
 }
 .header-first ul li img {
-  /* align-self: flex-end;
-  font-family: "Kaushan Script", cursive;
-  font-weight: lighter; */
-  height: 70px;
-  width: 75px;
-  /* background-color: red; */
+  height: 65px;
+  width: 100px;
+  background-color: transparent;
 }
 .header-second {
   display: flex;
@@ -101,7 +102,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 80px 0;
 }
 
 .main-container {

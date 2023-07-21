@@ -4,44 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/signup.css" rel="stylesheet">
     <title>EasyCooks | Reach for the Recipes </title>
-    <link rel="stylesheet" href="../css/style.css" </head>
+</head>
 
 <body>
-    <header class="header">
-        <nav class="header-first">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
-        <nav class="header-second">
-            <button type="submit" class="button-control"><a href="/html/login.html">Login</a></button>
-            <button type="submit" class="button-control"><a href="/html/signup.html">Signup</a></button>
-        </nav>
-        </div>
-    </header>
-    <main class="main-body">
-        <div class="logo">
-            <img src="../assests/logo-modified.png" alt="logo picture" id="logo" height="250" />
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="search for recipe">
-            <button type="submit" class="search-btn">Search</button>
-        </div>
-    </main>
-    <footer>
-        <div id="contact-us">
-            <form>
-                <div>
+    <div class="container">
 
+        <div class="main-container">
+            <div class="card">
+                <div class="card-heading">
+                    <h2>EasyCooks Signup</h2>
+                    <p>Hey, Enter your details to be one of us.</p>
                 </div>
-            </form>
+                <form>
+                    <input type="mail" autocomplete="off" placeholder="enter email / phone number" required />
+                    <input type="password" autocomplete="off" placeholder="password" id="password" required />
+                    <div id="passwordReq" class="error"></div>
+                    <input type="password" autocomplete="off" placeholder="re-enter password" id="confirmPassword" />
+                    <div id="confirmPasswordReq" class="error"></div>
+                    <button id="btn">Sign up</button>
+                    <p>&mdash; Or sign up with &mdash;</p>
+                </form>
+                <div class="card-footer">
+                    <span class="card-footer-items">Google</span>
+                    <span class="card-footer-items">Apple ID</span>
+                    <span class="card-footer-items">Facebook</span>
+                </div>
+                <p>Already have an account ? <a href="/html/login.html"><span class="sign-up">Sign in</span></a></p>
+            </div>
         </div>
-
-    </footer>
-
+        <div class="side-image">
+            <img src="/assests/signup.png" alt="test" height="500" width="500" />
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing possimus, dolore tenetur! Ipsa.</p>
+        </div>
+    </div>
+    <script src="/js/signup.js"></script>
 </body>
 
 </html>
