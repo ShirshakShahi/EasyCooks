@@ -109,8 +109,6 @@
 .main-container {
   background-color: white;
   border-radius: 5%;
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
 }
 
 .card {
