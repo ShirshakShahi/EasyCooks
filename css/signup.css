@@ -10,25 +10,45 @@
   --secondary-color: #fec887;
 }
 
+@media only screen and (max-width: 927px) {
+  .side-image img,.side-image p{
+    display: none;
+  }
+}
+@media only screen and (max-width: 396px) {
+     .main-container{
+      width: 350px;
+      height: 550px;
+     }
+     .card{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+     }
+     *{
+      background-image: url("../assests/");
+     }
+}
 .container {
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content:space-evenly;
   align-items: center;
   background-color: var(--primary-color);
 }
 
-.main-container {
+.main-container { 
   background-color: white;
   border-radius: 10%;
+  width: 420px;
 }
 
 .card {
-  /* background-color: transparent; */
+  /* background-color: red; */
   height: 550px;
-  width: 350px;
-  margin: 30px;
+  width: inherit;
 }
 
 .card-heading {
@@ -59,7 +79,6 @@ input {
   height: 35px;
   margin: 5px 0;
 }
-
 a {
     text-decoration: none;
     color: black;
@@ -71,7 +90,7 @@ p {
   text-align: center;
 }
 
-button {
+button{
   color: black;
   background-color: var(--secondary-color);
   height: 35px;
@@ -108,10 +127,14 @@ button.disabled {
 
 .card-footer-items:hover {
   cursor: pointer;
+  background-color: rgb(227, 225, 225);
 }
 
 .sign-up {
   font-weight: bolder;
+}
+.sign-up:hover {
+  color: rgb(122, 64, 64);
 }
 
 .error {
@@ -120,7 +143,8 @@ button.disabled {
 }
 
 .success {
-  color: rgb(8, 210, 8);
+  color: rgb(3, 139, 3);
+  font-size: 0.8rem;
 }
 
 .side-image{

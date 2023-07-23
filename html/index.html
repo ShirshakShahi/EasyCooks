@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/signup.css" rel="stylesheet" type="text/css">
     <title>EasyCooks | Reach for the Recipes </title>
-    <link href="/css/signup.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="container">
-
         <div class="main-container">
             <div class="card">
                 <div class="card-heading">
                     <h2>EasyCooks Signup</h2>
                     <p>Hey, Enter your details to be one of us.</p>
                 </div>
-                <form>
-                    <input type="mail" autocomplete="off" placeholder="enter email / phone number" required />
-                    <input type="password" autocomplete="off" placeholder="password" id="password" required />
+                <form action="/partials/_handleSignUp.php" method="POST">
+                    <input type="mail" autocomplete="off" placeholder="enter email / phone number" required name="mail"/>
+                    <input type="password" autocomplete="off" placeholder="password" id="password" required name="password"/>
                     <div id="passwordReq" class="error"></div>
-                    <input type="password" autocomplete="off" placeholder="re-enter password" id="confirmPassword" />
+                    <input type="password" autocomplete="off" placeholder="re-enter password" id="confirmPassword" name="cpassword"/>
                     <div id="confirmPasswordReq" class="error"></div>
-                    <button id="btn">Sign up</button>
+
+                    <button id="btn" type="submit">Sign Up</button>
                     <p>&mdash; Or sign up with &mdash;</p>
                 </form>
                 <div class="card-footer">
@@ -35,7 +34,7 @@
         </div>
         <div class="side-image">
             <img src="/assests/signup.png" alt="test" height="500" width="500" />
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing possimus, dolore tenetur! Ipsa.</p>
+            <p>Each recipe is a story waiting to be told, a symphony of ingredients harmonizing to create a masterpiece on the plate.</p>
         </div>
     </div>
     <script src="/js/signup.js"></script>
