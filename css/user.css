@@ -19,6 +19,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
+  margin-right: 0px;
 }
 
 .header-first {
@@ -102,7 +103,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 80px 0;
+  margin: 80px 150px 0 0;
 }
 
 .main-container {
@@ -149,4 +150,62 @@ section {
   font-size: 1rem;
   text-decoration: none;
   color: black;
+}
+
+aside {
+  background-color: var(--primary-color);
+  height: 100%;
+  width: 20vw;
+  top: 9vh;
+  right: 0;
+  z-index: -1;
+  position: fixed;
+}
+
+.aside-container {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: yellow; */
+}
+.dp-container {
+  /* background-color: red; */
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+
+.profile-info {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#profilepic {
+  height: 200px;
+  width: 200px;
+}
+
+button {
+  color: black;
+  align-self: flex-end;
+  background-color: var(--secondary-color);
+  height: 35px;
+  width: 52%;
+  border-radius: 10px;
+  font-size:1.2rem;
+  border: 1px solid #ccc;
+}
+button>a{
+  text-decoration: none;
+  color: #000000;
 }
