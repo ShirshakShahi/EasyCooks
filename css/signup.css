@@ -26,9 +26,6 @@
       align-items: center;
       flex-direction: column;
      }
-     *{
-      background-image: url("../assests/");
-     }
 }
 .container {
   height: 100vh;
