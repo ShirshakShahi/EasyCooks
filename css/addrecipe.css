@@ -10,6 +10,11 @@
   --secondary-color: #fec887;
 }
 
+@media only screen and (max-width: 927px) {
+  .side-image img,.side-image p{
+    display: none;
+  }
+}
 .header {
   display: flex;
   width: 100vw;
@@ -123,7 +128,7 @@ input[type="text"] {
   outline: none;
   margin-left: 1.3em;
   width: 200px;
-  font-size: 1.8rem;
+  font-size: 1rem;
 }
 
 .form-header {
@@ -134,7 +139,7 @@ input[type="text"] {
 }
 
 .recipe-header {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-family: sans-serif;
 }
 

@@ -8,11 +8,13 @@
         $num_recs=mysqli_num_rows($user_exist_check);
         if($num_recs==1){
             $row=mysqli_fetch_assoc($user_exist_check);
-            if(password_verify($form_password,$row['password'])){  
+            $user_no=$row['user_no'];
+            if(password_verify($form_password,$row['password'])){ 
+
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
-                header("location: signup.php"); 
+                header("location: landing.html?uid=$user_no"); 
             }
             else{
                 $showerr=true;

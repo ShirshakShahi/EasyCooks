@@ -1,6 +1,12 @@
+<?php
+    include '../partials/dbconnect.php';
+    if($_SERVER['REQUEST_MEtHOD']=="POST"){
+        
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/css/addrecipe.css" rel="stylesheet" />
+    <link href="../css/addrecipe.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,22 +23,22 @@
             <ul>
                 <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
-                   <img src="/assests/EasyCooksSum.png" alt="easycooks logo">
+                   <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>
             </ul>
         </nav>
         <nav class="header-second">
             <div class="pfp-container">
-                <img src="/assests/logo.png" alt="pfp pic">
+                <img src="../assests/logo.png" alt="pfp pic">
             </div>
-            <button type="submit" class="button-control"><a href="/html/addRecipe.html">Add Recipe</a></button>
+            <button type="submit" class="button-control"><a href="../html/addRecipe.html">Add Recipe</a></button>
         </nav>
         </div>
     </header>
     <div class="container">
         <div class="main-container">
             <div class="card">
-                <form>
+                <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
                     <div class="form-header">
                         <label class="recipe-header">Recipe:</label>
                         <input type="text" />
@@ -66,7 +72,9 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button>POST</button>
+                        <label for="recipe_image">Upload dish image</label>
+                        <input id="recipe_image" type="file" name="recipe_image" accept=".jpg, .jpeg, .png" >
+                        <button type="submit">POST</button>
                     </div>
                 </form>
             </div>

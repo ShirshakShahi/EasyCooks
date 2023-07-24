@@ -6,6 +6,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
      $email=$_POST["email"];
      $password=$_POST["password"];
      $cpassword=$_POST["cpassword"];
+     $usernameArr=explode("@",$email);
+     $username=$usernameArr[0];
+
 
      //Checking whether the email already exists
      $existSql="Select * from users where user_email='$email'";
@@ -17,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     else{
         if($password==$cpassword){
             $hash= password_hash($password,PASSWORD_DEFAULT);
-            $sql="Insert into users(`user_email`,`password`,`created_in`) values('$email','$hash',current_timestamp())";
+            $sql="Insert into users(`user_email`,`user_name`,`password`,`created_in`) values('$email','$username','$hash',current_timestamp())";
             $result= mysqli_query($conn,$sql);
             if($result){
                 $showAlert= true;
