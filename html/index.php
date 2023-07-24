@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/signup.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="/assests/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assests/favicon.png" type="image/x-icon">
     <title>EasyCooks | Reach for the Recipes </title>
 </head>
 <body>

@@ -1,4 +1,5 @@
 <?php
+    $showerr=false;
     if($_SERVER['REQUEST_METHOD']=="POST"){
         include "../partials/_dbconnect.php";
         $form_email=$_POST['email'];
@@ -7,18 +8,19 @@
         $num_recs=mysqli_num_rows($user_exist_check);
         if($num_recs==1){
             $row=mysqli_fetch_assoc($user_exist_check);
-            if($form_password==$row['password']){  
+            if(password_verify($form_password,$row['pass'])){  
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
-                header("location= index.php");
+                // header("location: index.php"); 
             }
             else{
-                $_SESSION['loggedin']=false; 
+                $showerr=true;
             }
         }
         else{
-
+            $showerr=true;
+            // $showerr="Invalid email or password. Please try again."
         }
 
     }
@@ -33,7 +35,6 @@
     <link rel="stylesheet" href="../css/login.css">
     <title>EasyCooks | Reach for the Recipes </title>
 </head>
-
 <body>
     <?php 
         include '../partials/_dbconnect.php';
@@ -44,11 +45,13 @@
                 <div class="card-heading">
                     <h2>EasyCooks Login</h2>
                     <?php
-                    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] === false) {
-                        echo'<p>Invalid email or password. Please try again.</p>';
-                    }
-                    ?>  
-                 <p>Hey, Enter your details to get sign in to your account</p>;
+                        if($showerr){
+                            echo'<p style="color: red">Invalid email or password. Please try again.</p>';
+                        }
+                        else{
+                            echo ' <p>Hey, Enter your details to get sign in to your account</p>';
+                        }
+                    ?>
                 </div>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <input type="text" name="email" autocomplete="off" placeholder="Enter Email / Phone number" required />
@@ -57,6 +60,7 @@
                     <button type="submit">Sign in</button>
                     <p>&mdash; Or sign in with &mdash;</p>
                 </form>
+               
                 <div class="card-footer">
                     <span class="card-footer-items">Google</span>
                     <span class="card-footer-items">Apple ID</span>
@@ -67,5 +71,4 @@
         </div>
     </div>
 </body>
-
 </html>
