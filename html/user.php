@@ -1,5 +1,11 @@
 <?php
+include '../partials/_dbconnect.php';
+session_start();
+$user_email=$_SESSION['user_email'];
 
+if(!isset($user_email)){
+    header('location:login.php');
+}
 
 ?>
 
@@ -113,10 +119,19 @@
             </div>
 
             <div class="profile-info">
+
+            <?php
+           $select =mysqli_query($conn,"select * from users where user_email='$user_email'") or die('query failed');
+           if(mysqli_num_rows($select)>0){
+            $fetch= mysqli_fetch_assoc($select);
+           }
+           ?>
+       <h3> <?php echo $fetch['user_email']; ?></h3>
+
                 <label>Name : Ram Prasad</label>
                 <label>Location : Bhaktapur</label>
             </div>
-            <button><a href="../html/login.html">Log out</a></button>
+            <button><a href="../html/logout.php">Log out</a></button>
         </div>
     </aside>
 </body>
