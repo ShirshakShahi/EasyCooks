@@ -113,7 +113,7 @@
 
             <div class="profile-info">
             <?php
-
+                
            ?>
        <h3> <?php echo $fetch['user_email']; ?></h3>
             </div>
