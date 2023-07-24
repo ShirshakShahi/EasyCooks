@@ -1,3 +1,37 @@
+<?php
+$showAlert=false;
+$showError=false;
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    include '../partials/_dbconnect.php';
+     $email=$_POST["email"];
+     $password=$_POST["password"];
+     $cpassword=$_POST["cpassword"];
+
+     //Checking whether the email already exists
+     $existSql="Select * from users where user_email='$email'";
+     $result= mysqli_query($conn,$existSql);
+     $numExistrows=mysqli_num_rows($result);
+     if($numExistrows>0){
+        $showError="Email Already exists, Please try with a new Email!!";
+    }
+    else{
+        if($password==$cpassword){
+            $hash= password_hash($password,PASSWORD_DEFAULT);
+            $sql="Insert into users(`user_email`,`password`,`created_in`) values('$email','$hash',current_timestamp())";
+            $result= mysqli_query($conn,$sql);
+            if($result){
+                $showAlert= true;
+    }
+}
+else{
+    $showError="Passwords do not match";
+}
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +42,29 @@
     <title>EasyCooks | Reach for the Recipes </title>
 </head>
 <body>
+<?php 
+    ?>
     <div class="container">
         <div class="main-container">
             <div class="card">
                 <div class="card-heading">
                     <h2>EasyCooks Signup</h2>
-                    <p>Hey, Enter your details to be one of us.</p>
+                   <?php if($showAlert){
+        header('location:login.php');
+    }
+    
+    else{
+        if($showError){
+            echo ' <div style="color:red;background-color:white"> <b>'. $showError.'</b>
+            </div> ';
+            }
+       echo ' <p>Hey, Enter your details to be one of us.</p>';
+    }
+    ?>
                 </div>
-                <form action="/partials/_handleSignUp.php" method="POST">
-                    <input type="mail" autocomplete="off" placeholder="enter email / phone number" required name="mail"/>
+                <form action="<?php $_SERVER['PHP_SELF'] ?>
+" method="POST">
+                    <input type="mail" autocomplete="off" placeholder="enter email " required name="email"/>
                     <input type="password" autocomplete="off" placeholder="password" id="password" required name="password"/>
                     <div id="passwordReq" class="error"></div>
                     <input type="password" autocomplete="off" placeholder="re-enter password" id="confirmPassword" name="cpassword"/>

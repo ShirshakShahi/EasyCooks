@@ -48,7 +48,7 @@
                         echo'<p>Invalid email or password. Please try again.</p>';
                     }
                     ?>  
-                 <p>Hey, Enter your details to get sign in to your account</p>;
+                 <p>Hey, Enter your details to get sign in to your account</p>
                 </div>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <input type="text" name="email" autocomplete="off" placeholder="Enter Email / Phone number" required />
