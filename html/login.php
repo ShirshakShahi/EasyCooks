@@ -8,7 +8,7 @@
         $num_recs=mysqli_num_rows($user_exist_check);
         if($num_recs==1){
             $row=mysqli_fetch_assoc($user_exist_check);
-            if(password_verify($form_password,$row['pass'])){  
+            if(password_verify($form_password,$row['password'])){  
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
@@ -66,7 +66,7 @@
                     <span class="card-footer-items">Apple ID</span>
                     <span class="card-footer-items">Facebook</span>
                 </div>
-                <p>Don't have an account ? <a href="../html/index.php"><span class="sign-up">Sign up</span></p>
+                <p>Don't have an account ? <a href="../html/signup.php"><span class="sign-up">Sign up</span></p>
             </div>
         </div>
     </div>
