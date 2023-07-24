@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/css/addrecipe.css" rel="stylesheet" />
+    <link href="../css/addrecipe.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,15 +17,15 @@
             <ul>
                 <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
-                   <img src="/assests/EasyCooksSum.png" alt="easycooks logo">
+                   <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>
             </ul>
         </nav>
         <nav class="header-second">
             <div class="pfp-container">
-                <img src="/assests/logo.png" alt="pfp pic">
+                <img src="../assests/logo.png" alt="pfp pic">
             </div>
-            <button type="submit" class="button-control"><a href="/html/addRecipe.html">Add Recipe</a></button>
+            <button type="submit" class="button-control"><a href="../html/addRecipe.html">Add Recipe</a></button>
         </nav>
         </div>
     </header>
