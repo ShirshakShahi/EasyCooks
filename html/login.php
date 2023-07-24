@@ -10,7 +10,6 @@
             $row=mysqli_fetch_assoc($user_exist_check);
             $user_no=$row['user_no'];
             if(password_verify($form_password,$row['password'])){ 
-
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
