@@ -101,9 +101,13 @@ button:hover {
 
 .card-footer-items:hover {
   cursor: pointer;
+  background-color: rgb(227, 225, 225);
 }
 
 .sign-up {
   font-weight: bolder;
+}
+.sign-up:hover {
+  color: rgb(122, 64, 64);
 }
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/signup.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/assests/favicon.png" type="image/x-icon">
     <title>EasyCooks | Reach for the Recipes </title>
 </head>
 <body>
@@ -29,15 +30,15 @@
                     <span class="card-footer-items">Apple ID</span>
                     <span class="card-footer-items">Facebook</span>
                 </div>
-                <p>Already have an account ? <a href="/html/login.html"><span class="sign-up">Sign in</span></a></p>
+                <p>Already have an account ? <a href="../html/login.php"><span class="sign-up">Sign in</span></a></p>
             </div>
         </div>
         <div class="side-image">
-            <img src="/assests/signup.png" alt="test" height="500" width="500" />
+            <img src="../assests/signup.png" alt="test" height="500" width="500" />
             <p>Each recipe is a story waiting to be told, a symphony of ingredients harmonizing to create a masterpiece on the plate.</p>
         </div>
     </div>
-    <script src="/js/signup.js"></script>
+    <script src="../js/signup.js"></script>
 </body>
 
 </html>
