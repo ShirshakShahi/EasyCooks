@@ -12,7 +12,7 @@
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
-                // header("location: index.php"); 
+                header("location: signup.php"); 
             }
             else{
                 $showerr=true;
