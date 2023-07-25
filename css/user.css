@@ -11,6 +11,7 @@
   --secondary-color: #fec887;
 }
 
+
 .header {
   display: flex;
   width: 100vw;
@@ -99,11 +100,12 @@
   width: 40px;
 }
 
-section {
+.container {
+  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 80px 150px 0 0;
+  /* margin: 80px 150px 0 0; */
 }
 
 .main-container {
@@ -152,27 +154,7 @@ section {
   color: black;
 }
 
-aside {
-  background-color: var(--primary-color);
-  height: 100%;
-  width: 20vw;
-  top: 9vh;
-  right: 0;
-  z-index: -1;
-  position: fixed;
-}
-
-.aside-container {
-  height: inherit;
-  width: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  /* background-color: yellow; */
-}
 .dp-container {
-  /* background-color: red; */
   height: 200px;
   display: flex;
   justify-content: center;
@@ -191,8 +173,8 @@ aside {
 }
 
 #profilepic {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 
 button {

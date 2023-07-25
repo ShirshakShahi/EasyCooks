@@ -13,7 +13,8 @@
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
-                header("location: landing.html?uid=$user_no"); 
+                $_SESSION['user_number']=$row['user_no'];
+                header("location: landing.php"); 
             }
             else{
                 $showerr=true;
@@ -21,7 +22,6 @@
         }
         else{
             $showerr=true;
-            // $showerr="Invalid email or password. Please try again."
         }
 
     }

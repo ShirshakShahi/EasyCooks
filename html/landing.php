@@ -1,12 +1,22 @@
+<?php
+include  "../partials/_dbconnect.php";
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
+    // Redirect to the login page or show an access denied message
+    header("location: login.php");
+    exit();
+}
+else{
+    $uid=$_SERVER['user_number'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyCooks | Reach for the Recipes </title>
-    <link href="../css/profile.css" rel="stylesheet" />
-    <link href="landing.css" rel="stylesheet" />
+    <link href="../CSS/landing.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,20 +27,18 @@
         
         <nav class="header-first">
             <ul>
+            <li><a href="logout.php">logout</a></li>
                 <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                    <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>
             </ul>
         </nav>
-        <nav class="header-second">
-            <div class="pfp-container">
-                <img src="../assests/logo.png" alt="pfp pic">
-            </div>
-            <button type="submit" class="button-control"><a href="../html/addRecipe.html">Add Recipe</a></button>            
+        <nav class="header-second"> 
               <a href="user.php"><img class="pfp-container" src="../assests/logo.png" alt="pfp pic"></a>
-            
-            <button type="submit" class="button-control"><a href="addRecipe.php">Add Recipe</a></button>
+            <?php
+            echo '<button type="submit" class="button-control"><a href="addRecipe.php?uid='.$uid.'">Add Recipe</a></button>';
+            ?>
         </nav>
         </div>
     </header>

@@ -1,12 +1,6 @@
-<?php
-    include '../partials/dbconnect.php';
-    if($_SERVER['REQUEST_MEtHOD']=="POST"){
-        
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +32,7 @@
     <div class="container">
         <div class="main-container">
             <div class="card">
-                <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+                <form>
                     <div class="form-header">
                         <label class="recipe-header">Recipe:</label>
                         <input type="text" />
@@ -72,9 +66,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <label for="recipe_image">Upload dish image</label>
-                        <input id="recipe_image" type="file" name="recipe_image" accept=".jpg, .jpeg, .png" >
-                        <button type="submit">POST</button>
+                        <button>POST</button>
                     </div>
                 </form>
             </div>

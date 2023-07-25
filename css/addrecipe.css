@@ -9,12 +9,7 @@
   --primary-color: #f6f2eb;
   --secondary-color: #fec887;
 }
-
-@media only screen and (max-width: 927px) {
-  .side-image img,.side-image p{
-    display: none;
-  }
-}
+ 
 .header {
   display: flex;
   width: 100vw;
@@ -24,20 +19,20 @@
   top: 0;
   bottom: 0;
 }
-
+ 
 .header-first {
   display: flex;
   align-items: center;
   flex: 1;
   background-color: var(--primary-color);
 }
-
+ 
 .header-first ul {
   display: flex;
   width: 50vw;
   justify-content: space-between;
 }
-
+ 
 .header-first ul li {
   list-style-type: none;
   display: flex;
@@ -66,42 +61,42 @@
   flex: 1;
   background-color: var(--primary-color);
 }
-
+ 
 .button-control {
   background-color: var(--secondary-color);
-
+ 
   height: 30px;
   width: 100px;
   margin: 0px 15px;
   border: none;
   border-radius: 7px;
 }
-
+ 
 .button-control a {
   font-size: 1rem;
   text-decoration: none;
   color: black;
 }
-
+ 
 .fa-house {
   margin-left: 15px;
   font-size: 1.5rem;
   color: rgb(90, 79, 79);
 }
-
+ 
 .pfp-container {
   border-radius: 50%;
   height: 40px;
   width: 40px;
   background-color: red;
 }
-
+ 
 .pfp-container > img {
   border-radius: 50%;
   height: 40px;
   width: 40px;
 }
-
+ 
 .container {
   height: 110vh;
   width: 100vw;
@@ -110,49 +105,49 @@
   align-items: center;
   background-color: var(--primary-color);
 }
-
+ 
 .main-container {
   background-color: white;
   border-radius: 5%;
 }
-
+ 
 .card {
   height: 620px;
   width: 1000px;
   margin: 30px;
 }
-
+ 
 input[type="text"] {
   border: none;
   border-bottom: 1px solid #ccc;
   outline: none;
   margin-left: 1.3em;
   width: 200px;
-  font-size: 1rem;
+  font-size: 1.8rem;
 }
-
+ 
 .form-header {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
 }
-
+ 
 .recipe-header {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-family: sans-serif;
 }
-
-
-
+ 
+ 
+ 
 .ingredients-left,
 .ingredients-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
-
+ 
+ 
 .button {
   display: flex;
   height: 50px;
@@ -160,7 +155,7 @@ input[type="text"] {
   align-items: center;
   margin: 15px 30px 0 0;
 }
-
+ 
 .button > button {
   color: black;
   background-color: var(--secondary-color);
@@ -169,12 +164,12 @@ input[type="text"] {
   border-radius: 10px;
   border: 1px solid #ccc;
 }
-
+ 
 button:hover {
   cursor: pointer;
   background-color: #e9ba80;
 }
-
+ 
 textArea{
   resize: none;
 }
