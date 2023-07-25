@@ -105,7 +105,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 80px 150px 0 0; */
+  margin: 80px 0px;
 }
 
 .main-container {
@@ -179,23 +179,27 @@
 
 button {
   color: black;
-  align-self: flex-end;
   background-color: var(--secondary-color);
   height: 35px;
   width: 52%;
   border-radius: 10px;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   border: 1px solid #ccc;
 }
-button>a{
+button > a {
   text-decoration: none;
   color: #000000;
 }
 
-#trash  {
+#trash {
   width: 50px;
 }
-.btn-container{
-display: flex;
-justify-content: space-evenly;
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.username {
+  font-size: large;
+  margin-left: 10px;
 }
