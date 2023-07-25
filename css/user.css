@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 * {
   margin: 0;
-  padding: 0px;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Mukta", sans-serif;
 }
@@ -91,17 +91,17 @@
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  background-color: red;
 }
 
 .pfp-container > img {
   border-radius: 50%;
   height: 40px;
   width: 40px;
+  background-color: var(--secondary-color);
 }
 
 .container {
-  background-color: red;
+  background-color:white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,4 +202,22 @@ button > a {
 .username {
   font-size: large;
   margin-left: 10px;
+}
+
+.photo-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: transparent;
+    height: 40vh;
+}
+.user-pp{
+    border: 1px solid grey;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.user-pp img{
+  height: inherit;
+  width: inherit;
 }

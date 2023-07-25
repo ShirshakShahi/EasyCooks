@@ -7,7 +7,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
     exit();
 }
 else{
-    $uid=$_SERVER['user_number'];
+    $uid=$_SESSION['user_number'];
 }
 ?>
 <!DOCTYPE html>
@@ -44,58 +44,6 @@ else{
     </header>
     <section>
         <div class="main-container">
-
-            <div class="image-sec">
-                <img src="../assests/stock-photo-fresh-homemade-italian-pizza-margherita-with-buffalo-mozzarella-and-basil-1829205563.jpg"
-                    alt="food-pic" />
-
-            </div>
-
-            <div class="card-desc">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam qui dolorum voluptatem perferendis?
-                    Culpa, tenetur nihil! Ipsam quos nostrum, aliquid fugiat nesciunt sequi. Repellat consequuntur
-                    corrupti, vel atque exercitationem aspernatur?</p>
-                <button><a href="#">View More</a></button>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="main-container">
-
-            <div class="image-sec">
-                <img src="../assests/stock-photo-fresh-homemade-italian-pizza-margherita-with-buffalo-mozzarella-and-basil-1829205563.jpg"
-                    alt="food-pic" />
-
-            </div>
-
-            <div class="card-desc">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam qui dolorum voluptatem perferendis?
-                    Culpa, tenetur nihil! Ipsam quos nostrum, aliquid fugiat nesciunt sequi. Repellat consequuntur
-                    corrupti, vel atque exercitationem aspernatur?</p>
-                <button><a href="#">View More</a></button>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="main-container">
-
-            <div class="image-sec">
-                <img src="../assests/stock-photo-fresh-homemade-italian-pizza-margherita-with-buffalo-mozzarella-and-basil-1829205563.jpg"
-                    alt="food-pic" />
-
-            </div>
-
-            <div class="card-desc">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam qui dolorum voluptatem perferendis?
-                    Culpa, tenetur nihil! Ipsam quos nostrum, aliquid fugiat nesciunt sequi. Repellat consequuntur
-                    corrupti, vel atque exercitationem aspernatur?</p>
-                <button><a href="#">View More</a></button>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="main-container">
-
             <div class="image-sec">
                 <img src="../assests/stock-photo-fresh-homemade-italian-pizza-margherita-with-buffalo-mozzarella-and-basil-1829205563.jpg"
                     alt="food-pic" />

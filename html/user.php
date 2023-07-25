@@ -1,9 +1,13 @@
 <?php
 session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
+    // Redirect to the login page or show an access denied message
+    header("location: login.php");
+    exit();
+}
 $user_email=$_SESSION['user_email']; 
 $uid=$_SESSION['user_number']; 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +21,23 @@ $uid=$_SESSION['user_number'];
 </head>
 
 <body>
+    <?php
+    include  "../partials/_dbconnect.php";
+    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
+    $row=mysqli_fetch_assoc($res);
+    echo'<div class="photo-container">
+        <div class="user-pp">
+            <img src="../assests/favicon.png" alt="">
+        </div>
+    </div>
+    <div class="personal-inf">
+        <h3 align="center">'.$row['user_name'].'</h3>
+        <h4 align="center">'.$row['user_email'].'</h3>
+    </div>
+    <div class="profile-options">
+
+    </div>';
+    ?>
     <header class="header">
         <nav class="header-first">
             <ul>
@@ -34,22 +55,28 @@ $uid=$_SESSION['user_number'];
         </nav>
         </div>
     </header>
-    <div class="container">
-        <div class="main-container">
-            <div class="image-sec">
-                <img src="../assests/stock-photo-fresh-homemade-italian-pizza-margherita-with-buffalo-mozzarella-and-basil-1829205563.jpg"
-                    alt="food-pic" />
-            </div>
-            <div class="card-desc">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam qui dolorum voluptatem perferendis?
-                    Culpa, tenetur nihil! Ipsam quos nostrum, aliquid fugiat nesciunt sequi. Repellat consequuntur
-                    corrupti, vel atque exercitationem aspernatur?</p>
-                <div class="btn-container">
-                    <button id="trash"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
-                    <button><a href="#">View More</a></button>
+    <?php
+        include '../partials/_dbconnect.php';
+        $user_posts=mysqli_query($conn,"select * from recipes where user_no='$uid'");
+        while($row=mysqli_fetch_assoc($user_posts)){
+            echo '
+            <div class="container">
+                <div class="main-container">
+                    <div class="image-sec">
+                        <img src="data:image/jpeg;base64,' . base64_encode($row['food_image_data']) .'" alt="'. $row['food_image_name'] .'">
+                    </div>
+                    <div class="card-desc">
+                        <p>'.$row['ingredients'].'</p>
+                        <p>'.$row['directions'].'</p>
+                        <div class="btn-container">
+                            <button id="trash"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
+                            <button><a href="#">View More</a></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-</div> 
+        </div> 
+            ';
+        }
+    ?>
 </body>
 </html>
