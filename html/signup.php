@@ -12,7 +12,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
      $imageData = file_get_contents($image);
      $imageName = $_FILES['image']['name'];
 
-
      //Checking whether the email already exists
      $existSql="Select * from users where user_email='$email'";
      $result= mysqli_query($conn,$existSql);
