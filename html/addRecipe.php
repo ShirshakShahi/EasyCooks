@@ -9,7 +9,6 @@
 <?php
     if($_SERVER['REQUEST_METHOD']=="POST"){
         include '../partials/_dbconnect.php';
-        session_start();
         $uno=$_SESSION['user_number'];
         $recipe_name=$_POST['recipe_title'];
         $kitchen_name=$_POST['kitchen_name'];
@@ -19,16 +18,20 @@
         $ingredients=$_POST['ingredients'];
         $direction=$_POST['directions'];
         $image = $_FILES['image']['tmp_name'];
-        $imageData = addslashes(file_get_contents($image));
+        $imageData = file_get_contents($image);
         $imageName = $_FILES['image']['name'];
         
         // Insert the data into the database
-        $query = "INSERT INTO recipes (recipe_name,kitchen_name,cooking_time,temperature,no_of_servings,ingredients,directions,user_no,food_image_name,food_image_data)VALUES('$recipe_name','$kitchen_name','$cooktime','$temp','$servings','$ingredients','$direction','$uno','$imageName','$imageData')";
-        if ($conn->query($query) === TRUE){
-            $showmsg=true;
-        }else{
-                $showmsg=false;
+        $query = "INSERT INTO recipes (recipe_name,kitchen_name,cooking_time,temperature,no_of_servings,ingredients,directions,user_no,food_image_name,food_image_data)VALUES(?,?,?,?,?,?,?,?,?,?)";
+        $stmt=$conn->prepare($query);
+        $stmt->bind_param("ssssssssss", $recipe_name, $kitchen_name, $cooktime, $temp, $servings, $ingredients, $direction, $uno, $imageName, $imageData);
+
+        if ($stmt->execute()) {
+            $showmsg = true;
+        } else {
+            $showmsg = false;
         }
+        $stmt->close();
     }
 ?>
 
