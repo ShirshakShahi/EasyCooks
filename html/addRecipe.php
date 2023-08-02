@@ -23,7 +23,7 @@
         $imageName = $_FILES['image']['name'];
        
         // Insert the data into the database
-        $query = "INSERT INTO recipes (recipe_name,kitchen_name,cooking_time,temperature,no_of_servings,ingredients,directions,user_no,food_image_name,food_image_data)VALUES(?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO recipes (recipe_title,kitchen_name,cook_time,temperature,servings,ingredients,directions,user_number,food_image_name,food_image_data)VALUES(?,?,?,?,?,?,?,?,?,?)";
         $stmt=$conn->prepare($query);
         $stmt->bind_param("ssssssssss", $recipe_name, $kitchen_name, $cooktime, $temp, $servings, $ingredients, $direction, $uno, $imageName, $imageData);
         if (!$conn->ping()) {

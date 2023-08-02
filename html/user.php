@@ -75,7 +75,7 @@ $uid=$_SESSION['user_number'];
     ?>
     <?php
         include '../partials/_dbconnect.php';
-        $user_posts=mysqli_query($conn,"select * from recipes where user_no='$uid'");
+        $user_posts=mysqli_query($conn,"select * from recipes where user_number='$uid'");
         while($row=mysqli_fetch_assoc($user_posts)){
             echo '
             <div class="container">
@@ -84,11 +84,26 @@ $uid=$_SESSION['user_number'];
                         <img src="data:image/jpeg;base64,' . base64_encode($row['food_image_data']) .'" alt="'. $row['food_image_name'] .'">
                     </div>
                     <div class="card-desc">
-                        <h2 align="center">'.$row['recipe_name'].'</h2>
-                        <h3>Ingredients</h3>
-                        <p>'.$row['ingredients'].'</p>
-                        <h3>Directions</h3>
-                        <p>'.$row['directions'].'</p>
+                        <h2 align="center" style="font-size:2.5em;" class="teko-font"><u>'.$row['recipe_title'].'</u></h2>
+
+                        <div class="scroll-content">
+
+                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">From the Kitchen of: '.$row['kitchen_name'].'</h3>
+                    
+                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">Cooking temperature: '.$row['temperature'].'</h3>
+                        
+                        
+                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">Number of Servings: '.$row['servings'].'</h3>
+                        
+                        
+                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">Cook Time: '.$row['cook_time'].'</h3>
+                        
+                        <h3 style="font-size:1.7em;" class="teko-font ">Ingredients:</h3>
+                        <p class="para-scroll">'.$row['ingredients'].'</p>
+
+                        <h3 style="font-size:1.7em;" class="teko-font ">Directions:</h3>
+                        <p class="para-scroll">'.$row['directions'].'</p>
+                        </div>
                         <div class="btn-container">
                             <button id="trash"><a href="user.php?rid='.$row['recipe_id'].'"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
                         </div>

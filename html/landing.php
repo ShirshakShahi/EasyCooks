@@ -27,7 +27,7 @@ else{
         
         <nav class="header-first">
             <ul>
-            <li><a href="logout.php">logout</a></li>
+            <li><button name="button-control"><a href="logout.php">Logout</a></button></li>
                 <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                    <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
