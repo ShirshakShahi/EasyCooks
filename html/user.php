@@ -19,25 +19,7 @@ $uid=$_SESSION['user_number'];
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-    <?php
-    include  "../partials/_dbconnect.php";
-    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
-    $row=mysqli_fetch_assoc($res);
-    echo'<div class="photo-container">
-        <div class="user-pp">
-            <img src="../assests/favicon.png" alt="">
-        </div>
-    </div>
-    <div class="personal-inf">
-        <h3 align="center">'.$row['user_name'].'</h3>
-        <h4 align="center">'.$row['user_email'].'</h3>
-    </div>
-    <div class="profile-options">
-
-    </div>';
-    ?>
     <header class="header">
         <nav class="header-first">
             <ul>
@@ -56,6 +38,25 @@ $uid=$_SESSION['user_number'];
         </div>
     </header>
     <?php
+    include  "../partials/_dbconnect.php";
+    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
+    $row=mysqli_fetch_assoc($res);
+    echo '<div class="photo-container">
+        <div class="user-pp">
+            <img src="../assests/favicon.png" alt="">
+        </div>
+    </div>
+    <div class="personal-inf">
+        <h3>'.$row['user_name'].'</h3>
+        <h4>'.$row['user_email'].'</h4>
+    </div>
+    <div class="profile-options">
+    </div>
+    <hr><div class="post-header">
+    <h3 align="center">Your Posts</h3>
+</div>';
+    ?>
+    <?php
         include '../partials/_dbconnect.php';
         $user_posts=mysqli_query($conn,"select * from recipes where user_no='$uid'");
         while($row=mysqli_fetch_assoc($user_posts)){
@@ -66,7 +67,10 @@ $uid=$_SESSION['user_number'];
                         <img src="data:image/jpeg;base64,' . base64_encode($row['food_image_data']) .'" alt="'. $row['food_image_name'] .'">
                     </div>
                     <div class="card-desc">
+                        <h2 align="center">'.$row['recipe_name'].'</h2>
+                        <h3>Ingredients</h3>
                         <p>'.$row['ingredients'].'</p>
+                        <h3>Directions</h3>
                         <p>'.$row['directions'].'</p>
                         <div class="btn-container">
                             <button id="trash"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
