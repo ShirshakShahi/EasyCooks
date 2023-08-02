@@ -27,8 +27,7 @@ else{
         
         <nav class="header-first">
             <ul>
-            <li><button class="button-control"><a href="logout.php">Logout</a></button></li>
-                <li><a href="landing.php"> <i class="fa-solid fa-house"></i></a></li>
+                <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                    <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>
@@ -43,9 +42,8 @@ else{
             <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
             </div>'
             ?></a>
-            <?php
-            echo '<button type="submit" class="button-control"><a href="addRecipe.php?uid='.$uid.'">Add Recipe</a></button>';
-            ?>
+            <button type="submit" class="button-control"><a href="../html/addRecipe.php" class="teko-font">Add Recipe</a></button>
+            <button class="button-control"><a style="background-color: inherit;" class="teko-font" href="logout.php">Logout</a></button>
         </nav>
         </div>
     </header>

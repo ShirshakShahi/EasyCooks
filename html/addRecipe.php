@@ -72,7 +72,7 @@
             </div>'
             ?>
             </div></a>
-            <button class="button-control"><a href="../html/addRecipe.html">Add Recipe</a></button>
+            <button type="submit" class="button-control"><a href="../html/addRecipe.php" class="teko-font">Add Recipe</a></button>
         </nav>
         </div>
     </header>

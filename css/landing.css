@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Varela&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
 * {
   margin: 0;
   padding: 0px;
@@ -40,6 +41,16 @@
   justify-content: center;
   align-items: center;
   background-color: var(--primary-color);
+}
+.teko-font{
+  font-family: teko;
+  font-weight: lighter;
+}
+
+.lighter-font{
+  font-size: 0.9em;
+  font-weight: lighter;
+  color: rgb(87, 84, 84);
 }
 .header-first ul li a {
   text-decoration: none;

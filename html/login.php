@@ -13,7 +13,7 @@
                 session_start();
                 $_SESSION['loggedin']=true;
                 $_SESSION['user_email']=$row['user_email'];
-                $_SESSION['user_number']=$row['user_no'];
+                $_SESSION['user_number']=$row['user_number'];
                 header("location: landing.php"); 
             }
             else{

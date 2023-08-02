@@ -76,7 +76,7 @@ else{
                     <div id="passwordReq" class="error"></div>
                     <input type="password" autocomplete="off" placeholder="re-enter password" id="confirmPassword" name="cpassword"/>
                     <div id="confirmPasswordReq" class="error"></div>
-                    <input type="file" name="image" id="image" required>
+                    <input type="file" name="image" id="image" required >
                     <button id="btn" type="submit">Sign Up</button>
                     <p>&mdash; Or sign up with &mdash;</p>
                 </form>
