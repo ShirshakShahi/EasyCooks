@@ -27,7 +27,6 @@ else{
         
         <nav class="header-first">
             <ul>
-            <li><button name="button-control"><a href="logout.php">Logout</a></button></li>
                 <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                    <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
@@ -37,15 +36,14 @@ else{
         <nav class="header-second"> 
               <a href="user.php"><?php
             include '../partials/_dbconnect.php';
-            $dpFetch=mysqli_query($conn,"select * from users where user_no='$uid'");
+            $dpFetch=mysqli_query($conn,"select * from users where user_number='$uid'");
             $dparr=mysqli_fetch_assoc($dpFetch);
             echo '<div class="pfp-container">
             <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
             </div>'
             ?></a>
-            <?php
-            echo '<button type="submit" class="button-control"><a href="addRecipe.php?uid='.$uid.'">Add Recipe</a></button>';
-            ?>
+            <button type="submit" class="button-control"><a href="../html/addRecipe.php" class="teko-font">Add Recipe</a></button>
+            <button class="button-control"><a style="background-color: inherit;" class="teko-font" href="logout.php">Logout</a></button>
         </nav>
         </div>
     </header>

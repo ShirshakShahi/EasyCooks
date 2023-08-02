@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Varela&display=swap");
-* {
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+*{
   margin: 0;
   padding: 0px;
   box-sizing: border-box;
@@ -32,7 +33,11 @@
   width: 50vw;
   justify-content: space-between;
 }
- 
+.teko-font{
+  font-family: teko;
+  font-weight: lighter;
+}
+
 .header-first ul li {
   list-style-type: none;
   display: flex;
@@ -70,7 +75,6 @@
   border: none;
   border-radius: 7px;
 }
- 
 .button-control a {
   font-size: 1rem;
   text-decoration: none;
