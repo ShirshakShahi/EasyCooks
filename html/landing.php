@@ -35,7 +35,14 @@ else{
             </ul>
         </nav>
         <nav class="header-second"> 
-              <a href="user.php"><img class="pfp-container" src="../assests/logo.png" alt="pfp pic"></a>
+              <a href="user.php"><?php
+            include '../partials/_dbconnect.php';
+            $dpFetch=mysqli_query($conn,"select * from users where user_no='$uid'");
+            $dparr=mysqli_fetch_assoc($dpFetch);
+            echo '<div class="pfp-container">
+            <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
+            </div>'
+            ?></a>
             <?php
             echo '<button type="submit" class="button-control"><a href="addRecipe.php?uid='.$uid.'">Add Recipe</a></button>';
             ?>

@@ -5,6 +5,7 @@
         header("location: login.php");
         exit();
     }
+    $uid=$_SESSION['user_number'];
 ?>
 <?php
     if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -20,12 +21,15 @@
         $image = $_FILES['image']['tmp_name'];
         $imageData = file_get_contents($image);
         $imageName = $_FILES['image']['name'];
-        
+       
         // Insert the data into the database
         $query = "INSERT INTO recipes (recipe_name,kitchen_name,cooking_time,temperature,no_of_servings,ingredients,directions,user_no,food_image_name,food_image_data)VALUES(?,?,?,?,?,?,?,?,?,?)";
         $stmt=$conn->prepare($query);
         $stmt->bind_param("ssssssssss", $recipe_name, $kitchen_name, $cooktime, $temp, $servings, $ingredients, $direction, $uno, $imageName, $imageData);
-
+        if (!$conn->ping()) {
+            // Reconnect if the connection is lost
+            $conn = new mysqli($servername, $username, $password, $database);
+        }
         if ($stmt->execute()) {
             $showmsg = true;
         } else {
@@ -59,7 +63,14 @@
         </nav>
         <nav class="header-second">
             <a href="user.php"><div class="pfp-container">
-                <img src="../assests/logo.png" alt="pfp pic">
+            <?php
+            include '../partials/_dbconnect.php';
+            $dpFetch=mysqli_query($conn,"select * from users where user_no='$uid'");
+            $dparr=mysqli_fetch_assoc($dpFetch);
+            echo '<div class="pfp-container">
+            <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
+            </div>'
+            ?>
             </div></a>
             <button class="button-control"><a href="../html/addRecipe.html">Add Recipe</a></button>
         </nav>

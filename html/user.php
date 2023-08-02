@@ -30,10 +30,15 @@ $uid=$_SESSION['user_number'];
             </ul>
         </nav>
         <nav class="header-second">
-            <div class="pfp-container">
-                <img src="../assests/logo.png" alt="pfp pic">
-            </div>
-            <button type="submit" class="button-control"><a href="../html/addRecipe.php">Add Recipe</a></button>
+            <?php
+            include '../partials/_dbconnect.php';
+            $dpFetch=mysqli_query($conn,"select * from users where user_no='$uid'");
+            $dparr=mysqli_fetch_assoc($dpFetch);
+            echo '<div class="pfp-container">
+            <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
+            </div>'
+            ?>
+            <button type="submit" class="button-control"><a href="../html/addRecipe.php" class="teko-font">Add Recipe</a></button>
         </nav>
         </div>
     </header>
@@ -41,21 +46,20 @@ $uid=$_SESSION['user_number'];
     include  "../partials/_dbconnect.php";
     $res=mysqli_query($conn,"select * from users where user_no='$uid'");
     $row=mysqli_fetch_assoc($res);
-    echo '<div class="photo-container">
-        <div class="user-pp">
-        <img src="data:image/jpeg;base64,' . base64_encode($row['dp_image_data']) .'" alt="'. $row['dp_image_name'] .'">
-
-        </div>
+    echo '<div class="banner">
+    <div class="profile-container">
+    <div class="user-pp">
+    <img src="data:image/jpeg;base64,' . base64_encode($row['dp_image_data']) .'" alt="'. $row['dp_image_name'] .'">
     </div>
     <div class="personal-inf">
-        <h3>Username: '.$row['user_name'].'</h3>
-        <h3>Email: '.$row['user_email'].'</h3>
+        <h1 class="teko-font">'.$row['user_name'].'</h1>
+        <p class="lighter-font"><i>'.$row['user_email'].'</i></p>
     </div>
-    <div class="profile-options">
     </div>
-    <hr><div class="post-header">
-    <h3 align="center">Your Posts</h3>
-</div>';
+    </div>
+    <div class="post-header">
+        <h1 class="teko-font">Your Posts</h1>
+    </div>';
     ?>
     <?php
         include '../partials/_dbconnect.php';
