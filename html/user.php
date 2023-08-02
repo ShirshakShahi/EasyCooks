@@ -56,7 +56,7 @@ $uid=$_SESSION['user_number'];
     </header>
     <?php
     include  "../partials/_dbconnect.php";
-    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
+    $res=mysqli_query($conn,"select * it from users where user_no='$uid'");
     $row=mysqli_fetch_assoc($res);
     echo '<div class="banner">
     <div class="profile-container">
