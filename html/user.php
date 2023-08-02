@@ -1,5 +1,17 @@
 <?php
+include '../partials/_dbconnect.php';
 session_start();
+if(isset($_GET['rid'])){
+    $deletingItem=$_GET['rid'];
+    $deleteQuery="DELETE FROM `recipes` WHERE `recipes`.`recipe_id` = '$deletingItem'
+    ";
+    $exec_del=mysqli_query($conn,$deleteQuery);
+    if(!$exec_del){
+        echo"error encountered";
+    }
+    header("location: user.php");
+
+}
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
     // Redirect to the login page or show an access denied message
     header("location: login.php");
@@ -78,8 +90,7 @@ $uid=$_SESSION['user_number'];
                         <h3>Directions</h3>
                         <p>'.$row['directions'].'</p>
                         <div class="btn-container">
-                            <button id="trash"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
-                            <button><a href="#">View More</a></button>
+                            <button id="trash"><a href="user.php?rid='.$row['recipe_id'].'"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
                         </div>
                     </div>
                 </div>

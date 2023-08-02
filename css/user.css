@@ -204,7 +204,8 @@ button > a {
 }
 .btn-container {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: flex-end; */
+  flex-direction: row-reverse;
 }
 
 .username {
