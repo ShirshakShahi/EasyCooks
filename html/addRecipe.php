@@ -51,7 +51,7 @@
     <header class="header">
         <nav class="header-first">
             <ul>
-                <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
+                <li><a href="landing.php"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                    <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>

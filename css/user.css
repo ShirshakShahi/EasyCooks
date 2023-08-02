@@ -11,7 +11,6 @@
   --secondary-color: #fec887;
 }
 
-
 .header {
   display: flex;
   width: 100vw;
@@ -67,7 +66,6 @@
 
 .button-control {
   background-color: var(--secondary-color);
-
   height: 30px;
   width: 100px;
   margin: 0px 15px;
@@ -208,15 +206,17 @@ button > a {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-color: green;
+    background-color: transparent;
     height: 40vh;
+    border: 1px solid black;
 }
 
 .user-pp{
-    border: 1px solid grey;
+    border: 5px solid grey;
     border-radius: 50%;
     height: 200px;
     width: 200px;
+    overflow: hidden;
 }
 
 .user-pp img{
@@ -224,10 +224,15 @@ button > a {
   width: inherit;
 }
 
-.personal-inf{
-    background-color: red; 
+.personal-inf{ 
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
 }
 .profile-options{
   height: 30vh;
   border: 2px solid black;
+  
 }

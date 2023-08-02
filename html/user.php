@@ -23,7 +23,7 @@ $uid=$_SESSION['user_number'];
     <header class="header">
         <nav class="header-first">
             <ul>
-                <li><a href="#"> <i class="fa-solid fa-house"></i></a></li>
+                <li><a href="landing.php"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                     <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>
@@ -38,27 +38,27 @@ $uid=$_SESSION['user_number'];
         </div>
     </header>
     <?php
-        include  "../partials/_dbconnect.php";
-        $res=mysqli_query($conn,"select * from users where user_no='$uid'");
-        $row=mysqli_fetch_assoc($res);
-        echo '<div class="photo-container">
-            <div class= "user-pp">
-                <img src="../assests/favicon.png" alt="recipe_image">
-            </div>
-            </div>
-        <div class="personal-inf">
-            <h3>'.$row['user_name'].'</h3>
-            <h3>'.$row['user_email'].'</h3>
-        </div>
-        <div class="profile-options">
-        </div>
-        <div class="post-header">
-            <h3 align="center">Your Posts</h3>
-        </div>
-        ';
+    include  "../partials/_dbconnect.php";
+    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
+    $row=mysqli_fetch_assoc($res);
+    echo '<div class="photo-container">
+        <div class="user-pp">
+        <img src="data:image/jpeg;base64,' . base64_encode($row['dp_image_data']) .'" alt="'. $row['dp_image_name'] .'">
 
-
-        // include '../partials/_dbconnect.php';
+        </div>
+    </div>
+    <div class="personal-inf">
+        <h3>Username: '.$row['user_name'].'</h3>
+        <h3>Email: '.$row['user_email'].'</h3>
+    </div>
+    <div class="profile-options">
+    </div>
+    <hr><div class="post-header">
+    <h3 align="center">Your Posts</h3>
+</div>';
+    ?>
+    <?php
+        include '../partials/_dbconnect.php';
         $user_posts=mysqli_query($conn,"select * from recipes where user_no='$uid'");
         while($row=mysqli_fetch_assoc($user_posts)){
             echo '
