@@ -8,6 +8,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
      $cpassword=$_POST["cpassword"];
      $usernameArr=explode("@",$email);
      $username=$usernameArr[0];
+     $image = $_FILES['image']['tmp_name'];
+     $imageData = file_get_contents($image);
+     $imageName = $_FILES['image']['name'];
 
 
      //Checking whether the email already exists
@@ -20,11 +23,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     else{
         if($password==$cpassword){
             $hash= password_hash($password,PASSWORD_DEFAULT);
-            $sql="Insert into users(`user_email`,`user_name`,`password`,`created_in`) values('$email','$username','$hash',current_timestamp())";
-            $result= mysqli_query($conn,$sql);
-            if($result){
-                $showAlert= true;
-    }
+            $sql="Insert into users(`user_email`,`user_name`,`password`,`created_in`,`dp_image_name`,`dp_image_data`) values(?,?,?,current_timestamp(),?,?)";
+            $stmt=$conn->prepare($sql);
+            $stmt->bind_param("sssss",$email,$username,$hash,$imageName,$imageData);
+            if ($stmt->execute()) {
+                $showAlert = true;
+            }
+            $stmt->close();
 }
 else{
     $showError="Passwords do not match";
@@ -66,15 +71,13 @@ else{
     ?>
                 </div>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>
-" method="POST">
+" method="POST" enctype="multipart/form-data">
                     <input type="mail" autocomplete="off" placeholder="enter email " required name="email"/>
                     <input type="password" autocomplete="off" placeholder="password" id="password" required name="password"/>
                     <div id="passwordReq" class="error"></div>
                     <input type="password" autocomplete="off" placeholder="re-enter password" id="confirmPassword" name="cpassword"/>
                     <div id="confirmPasswordReq" class="error"></div>
-
-                    <input type="file" class="pp" accept="image/jpg, image/jpeg, image/png">
-
+                    <input type="file" name="image" id="image" required>
                     <button id="btn" type="submit">Sign Up</button>
                     <p>&mdash; Or sign up with &mdash;</p>
                 </form>

@@ -41,14 +41,14 @@ $uid=$_SESSION['user_number'];
     include  "../partials/_dbconnect.php";
     $res=mysqli_query($conn,"select * from users where user_no='$uid'");
     $row=mysqli_fetch_assoc($res);
-    echo '<div class="photo-container">
+    echo '<div class="photo-container"></div>
         <div class="user-pp">
-            <img src="../assests/favicon.png" alt="">
+        <img src="data:image/jpeg;base64,' . base64_encode($row['dp_image_data']) .'" alt="'. $row['dp_image_name'] .'">
+
         </div>
-    </div>
     <div class="personal-inf">
-        <h3>'.$row['user_name'].'</h3>
-        <h4>'.$row['user_email'].'</h4>
+        <h3>Username: '.$row['user_name'].'</h3>
+        <h3>Email: '.$row['user_email'].'</h3>
     </div>
     <div class="profile-options">
     </div>
@@ -68,10 +68,12 @@ $uid=$_SESSION['user_number'];
                     </div>
                     <div class="card-desc">
                         <h2 align="center">'.$row['recipe_name'].'</h2>
+                        <div class="scroll-content">
                         <h3>Ingredients</h3>
-                        <p>'.$row['ingredients'].'</p>
+                        <p class="para-scroll">'.$row['ingredients'].'</p>
                         <h3>Directions</h3>
-                        <p>'.$row['directions'].'</p>
+                        <p class="para-scroll">'.$row['directions'].'</p>
+                        </div>
                         <div class="btn-container">
                             <button id="trash"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
                             <button><a href="#">View More</a></button>
