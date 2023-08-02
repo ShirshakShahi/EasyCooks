@@ -221,3 +221,6 @@ button > a {
   height: inherit;
   width: inherit;
 }
+.personal-inf{
+    background-color: red; 
+}
