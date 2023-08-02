@@ -210,6 +210,8 @@ button > a {
     align-items: flex-end;
     background-color: transparent;
     height: 40vh;
+    background-image: url("../assests/pizza.jpg");
+
 }
 .user-pp{
     border: 1px solid grey;
@@ -222,5 +224,5 @@ button > a {
   width: inherit;
 }
 .personal-inf{
-    background-color: red; 
+    background-color: transparent; 
 }
