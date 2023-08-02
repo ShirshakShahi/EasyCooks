@@ -32,7 +32,7 @@ $uid=$_SESSION['user_number'];
         <nav class="header-second">
             <?php
             include '../partials/_dbconnect.php';
-            $dpFetch=mysqli_query($conn,"select * from users where user_no='$uid'");
+            $dpFetch=mysqli_query($conn,"select * from users where user_number='$uid'");
             $dparr=mysqli_fetch_assoc($dpFetch);
             echo '<div class="pfp-container">
             <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
@@ -44,7 +44,7 @@ $uid=$_SESSION['user_number'];
     </header>
     <?php
     include  "../partials/_dbconnect.php";
-    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
+    $res=mysqli_query($conn,"select * from users where user_number='$uid'");
     $row=mysqli_fetch_assoc($res);
     echo '<div class="banner">
     <div class="profile-container">

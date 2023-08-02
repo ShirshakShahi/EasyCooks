@@ -65,7 +65,7 @@
             <a href="user.php"><div class="pfp-container">
             <?php
             include '../partials/_dbconnect.php';
-            $dpFetch=mysqli_query($conn,"select * from users where user_no='$uid'");
+            $dpFetch=mysqli_query($conn,"select * from users where user_number='$uid'");
             $dparr=mysqli_fetch_assoc($dpFetch);
             echo '<div class="pfp-container">
             <img src="data:image/jpeg;base64,' . base64_encode($dparr['dp_image_data']) .'" alt="'. $dparr['dp_image_name'] .'">
