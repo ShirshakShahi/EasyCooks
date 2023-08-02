@@ -20,27 +20,6 @@ $uid=$_SESSION['user_number'];
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <?php
-    include  "../partials/_dbconnect.php";
-    $res=mysqli_query($conn,"select * from users where user_no='$uid'");
-    $row=mysqli_fetch_assoc($res);
-    echo'<div class="photo-container">
-        <div class="user-pp">
-            <img src="../assests/favicon.png" alt="">
-        </div>
-    </div>
-    <div class="personal-inf">
-        <h3>'.$row['user_name'].'</h3>
-        <h4>'.$row['user_email'].'</h3>
-    </div>
-    <div class="profile-options">
-    </div>
-    <hr>
-    <div class="post-header">
-        <h3 align="center">Your Posts</h3>
-    </div>
-    ';
-    ?>
     <header class="header">
         <nav class="header-first">
             <ul>
@@ -59,7 +38,27 @@ $uid=$_SESSION['user_number'];
         </div>
     </header>
     <?php
-        include '../partials/_dbconnect.php';
+        include  "../partials/_dbconnect.php";
+        $res=mysqli_query($conn,"select * from users where user_no='$uid'");
+        $row=mysqli_fetch_assoc($res);
+        echo '<div class="photo-container">
+            <div class= "user-pp">
+                <img src="../assests/favicon.png" alt="recipe_image">
+            </div>
+            </div>
+        <div class="personal-inf">
+            <h3>'.$row['user_name'].'</h3>
+            <h3>'.$row['user_email'].'</h3>
+        </div>
+        <div class="profile-options">
+        </div>
+        <div class="post-header">
+            <h3 align="center">Your Posts</h3>
+        </div>
+        ';
+
+
+        // include '../partials/_dbconnect.php';
         $user_posts=mysqli_query($conn,"select * from recipes where user_no='$uid'");
         while($row=mysqli_fetch_assoc($user_posts)){
             echo '
@@ -86,5 +85,3 @@ $uid=$_SESSION['user_number'];
     ?>
 </body>
 </html>
-
-<from action=""

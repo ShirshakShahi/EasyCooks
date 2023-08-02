@@ -208,19 +208,26 @@ button > a {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-color: transparent;
+    background-color: green;
     height: 40vh;
 }
+
 .user-pp{
     border: 1px solid grey;
     border-radius: 50%;
     height: 200px;
     width: 200px;
 }
+
 .user-pp img{
   height: inherit;
   width: inherit;
 }
+
 .personal-inf{
     background-color: red; 
+}
+.profile-options{
+  height: 30vh;
+  border: 2px solid black;
 }
