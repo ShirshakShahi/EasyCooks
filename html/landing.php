@@ -54,6 +54,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
         <h1 class="teko-font">Browse other's Recipes</h1>
     </div>
     <section>
+        <div class="container">
         <div class="main-container">
     <?php
         include '../partials/_dbconnect.php';
