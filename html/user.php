@@ -70,7 +70,7 @@ $uid=$_SESSION['user_number'];
     </div>
     </div>
     <div class="post-header">
-        <h1 class="teko-font">Your Posts</h1>
+        <h1  style="font-size:2.5em;" class="teko-font">Your Posts</h1>
     </div>';
     ?>
     <?php
@@ -84,25 +84,25 @@ $uid=$_SESSION['user_number'];
                         <img src="data:image/jpeg;base64,' . base64_encode($row['food_image_data']) .'" alt="'. $row['food_image_name'] .'">
                     </div>
                     <div class="card-desc">
-                        <h2 align="center" style="font-size:2.5em;" class="teko-font"><u>'.$row['recipe_title'].'</u></h2>
+                        <h2 align="center" style="font-size:2.2em;" class="teko-font">'.$row['recipe_title'].'</h2>
 
                         <div class="scroll-content">
 
-                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">From the Kitchen of: '.$row['kitchen_name'].'</h3>
+                        <h3 style="font-size:1.5em;" class="teko-font para-scroll">From the Kitchen of: '.$row['kitchen_name'].'</h3>
                     
-                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">Cooking temperature: '.$row['temperature'].'</h3>
+                        <h3 style="font-size:1.5em;" class="teko-font para-scroll">Cooking temperature: '.$row['temperature'].'</h3>
                         
                         
-                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">Number of Servings: '.$row['servings'].'</h3>
+                        <h3 style="font-size:1.5em;" class="teko-font para-scroll">Number of Servings: '.$row['servings'].'</h3>
                         
                         
-                        <h3 style="font-size:1.7em;" class="teko-font para-scroll">Cook Time: '.$row['cook_time'].'</h3>
+                        <h3 style="font-size:1.5em;" class="teko-font para-scroll">Cook Time: '.$row['cook_time'].'</h3>
                         
-                        <h3 style="font-size:1.7em;" class="teko-font ">Ingredients:</h3>
-                        <p class="para-scroll">'.$row['ingredients'].'</p>
+                        <h3 style="font-size:1.5em;" class="teko-font ">Ingredients:</h3>
+                        <p style="font-size:1em;" class="para-scroll ">'.$row['ingredients'].'</p>
 
-                        <h3 style="font-size:1.7em;" class="teko-font ">Directions:</h3>
-                        <p class="para-scroll">'.$row['directions'].'</p>
+                        <h3 style="font-size:1.5em;" class="teko-font ">Directions:</h3>
+                        <p style="font-size:1em;" class="para-scroll ">'.$row['directions'].'</p>
                         </div>
                         <div class="btn-container">
                             <button id="trash"><a href="user.php?rid='.$row['recipe_id'].'"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
