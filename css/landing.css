@@ -46,7 +46,17 @@
   font-family: teko;
   font-weight: lighter;
 }
+.feedtitle{
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
 
+.nav-blank{
+   height: 9vh;
+   background-color: red;
+}
 .lighter-font{
   font-size: 0.9em;
   font-weight: lighter;
@@ -113,22 +123,31 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 80px 0;
+}
+
+.container {
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px;
 }
 
 .main-container {
   background-color: var(--primary-color);
-  height: 500px;
+  height: 550px;
   border-radius: 5%;
   width: 900px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2vh;
 }
 
 .image-sec {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
 }
 
 .image-sec > img {
@@ -143,7 +162,7 @@ section {
   justify-content: space-around;
   height: 300px;
   width: 300px;
-  /* margin: 30px; */
+  margin-left: 3vh
 }
 
 .card-desc > button {
@@ -155,9 +174,64 @@ section {
   border: none;
   border-radius: 7px;
 }
+.scroll-content{
+  width: 300px;
+  height: 305px;
+  overflow:hidden;
+  overflow-y:scroll;
+}
+.para-scroll{
+  font-size : 15px;
+  padding:20px;
+}
+.comments{
+  display: flex;
+  padding: 4vh;
+  width: 800px;
+  height:150px;
+  background-color: red;
+}
+.img-Desc{
+  display: flex;
+  padding: 3vh;
+   
+}
+.text-section{
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  height: inherit;
+}
+.comment-read{
+    width: 50%;
+    border: 1px solid green;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-.card-desc > button > a {
-  font-size: 1rem;
-  text-decoration: none;
-  color: black;
+}
+.scroll-content{
+  overflow:hidden;
+  overflow-y:scroll;
+}
+.comment-dp{
+  height: 50px;
+  width: 50px;
+}
+.comment-dp img{
+  height: inherit;
+  width: inherit;
+  border-radius: 50%;
+}
+.comment-content{
+    width: 200px;
+    border:1px solid black;
+}
+textArea{
+  resize: none;
+}
+
+.comment-sec{
+  display: flex;
 }
