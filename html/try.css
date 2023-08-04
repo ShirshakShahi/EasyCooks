@@ -118,116 +118,53 @@
   width: 40px;
 }
 
-.container {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: 80px 0px;
-  height: 550px;
-  width: 100vw;
+.containerTry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
 }
 
-.main-container {
-  background-color: var(--primary-color);
-  height: inherit;
-  border-radius: 5%;
-  width: 900px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 2vh;
+.maincontainerTry{
+    height: 800px;
+    width: 700px;
+    border: 1px solid red;
+    background-color:var(--primary-color) ;
 }
-
-.image-sec {
-  height: 350px;
-  width: 350px;
+.imagedesc{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-
-.image-sec > img {
-  border-radius: 10%;
-  height: inherit;
-  width: inherit;
-}
-
-.card-desc {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 300px;
-  width: 300px;
-  margin-left: 3vh
-}
-
-.card-desc > button {
-  align-self: flex-end;
-  background-color: var(--secondary-color);
-  height: 50px;
-  width: 100px;
-  margin: 0px 15px;
-  border: none;
-  border-radius: 7px;
+.recipe-inf{
+    height: 260px;
+    background-color: green;
 }
 .scroll-content{
-  width: 300px;
-  height: 305px;
-  overflow:hidden;
-  overflow-y:scroll;
-}
-.para-scroll{
-  font-size : 15px;
-  padding:20px;
-}
-.comments{
-  display: flex;
-  padding: 4vh;
-  width: 800px;
-  height:150px;
-  background-color: red;
-}
-.img-Desc{
-  display: flex;
-  padding: 3vh;
-  width: 100%;
-   
-}
-.text-section{
-  justify-content: center;
-  display: flex;
-  width: 50%;
-  height: inherit;
-}
-.comment-read{
+    width: inherit;
+    height: inherit;
+    overflow:hidden;
+    overflow-y:scroll;
+  }
+  .para-scroll{
+    font-size : 15px;
+    padding:20px;
+  }
+  .comments{
+    display: flex;
+    justify-content: space-between;
+    padding: 4vh;
+    width: inherit;
+    height:inherit;
+    background-color: red;
+  }
+  .comment-read{
     width: 50%;
     border: 1px solid green;
-    height: 120px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.scroll-content{
-  overflow:hidden;
-  overflow-y:scroll;
-}
-.comment-dp{
-  height: 50px;
-  width: 50px;
-}
-.comment-dp img{
-  height: inherit;
-  width: inherit;
-  border-radius: 50%;
-}
-.comment-content{
-    width: 200px;
-    border:1px solid black;
-}
-textArea{
-  resize: none;
-}
-
-.comment-sec{
-  display: flex;
-}
+   }
+   

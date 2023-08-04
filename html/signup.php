@@ -1,3 +1,4 @@
+$email=somash@gmail.com
 <?php
 $showAlert=false;
 $showError=false;
