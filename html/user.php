@@ -3,7 +3,7 @@ include '../partials/_dbconnect.php';
 session_start();
 if(isset($_GET['rid'])){
     $deletingItem=$_GET['rid'];
-    $deleteQuery="DELETE FROM `recipes` WHERE `recipes`.`recipe_id` = '$deletingItem'
+    $deleteQuery="DELETE FROM recipes WHERE recipes.`recipe_id` = '$deletingItem'
     ";
     $exec_del=mysqli_query($conn,$deleteQuery);
     if(!$exec_del){
@@ -18,7 +18,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
     exit();
 }
 $user_email=$_SESSION['user_email']; 
-$user_name=$_SESSION['user_name']
 $uid=$_SESSION['user_number']; 
 ?>
 <!DOCTYPE html>
@@ -36,7 +35,7 @@ $uid=$_SESSION['user_number'];
     <header class="header">
         <nav class="header-first">
             <ul>
-                <li><a href="landing1.php"> <i class="fa-solid fa-house"></i></a></li>
+                <li><a href="landing.php"> <i class="fa-solid fa-house"></i></a></li>
                 <li>
                     <img src="../assests/EasyCooksSum.png" alt="easycooks logo">
                 </li>
@@ -108,6 +107,8 @@ $uid=$_SESSION['user_number'];
                         <div class="btn-container">
                             <button id="trash"><a href="user.php?rid='.$row['recipe_id'].'"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
                         </div>
+                        
+
                     </div>
                 </div>
         </div> 
