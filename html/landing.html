@@ -1,3 +1,19 @@
+<?php
+include  "../partials/_dbconnect.php";
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
+    // Redirect to the login page or show an access denied message
+    header("location: login.php");
+    exit();
+}
+    $uid=$_SESSION['user_number'];
+    $recipeId=$_GET['rid'];
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $comment_content=$_POST['comment'];
+        $result=mysqli_query($conn,"insert into comments values(' ','$uid','$comment_content',current_timestamp,'$recipeId')");        
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

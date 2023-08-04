@@ -159,8 +159,9 @@ section {
 }
 
 .food-desc {
-    height: 25vh;
-    width: 25vw;
+    /* background-color: white; */
+    height: 30vh;
+    width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,9 +207,8 @@ input[type="text"] {
     overflow: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     height: 25vh;
-    width: 25vw;
+    width: 450px;
     border-radius: 15px;
 }
 
@@ -228,3 +228,30 @@ input[type="text"] {
 label {
     display: block;
 }
+
+.scroll-content{
+    overflow:hidden;
+    overflow-y:scroll;
+    width: inherit;
+}
+.teko-font{
+    font-family: teko;
+    font-weight: lighter;
+}
+.para-scroll{
+    font-size : 15px;
+    padding:20px;
+    width: inherit;
+  }
+  .comment-sec{
+    display: flex;
+  }
+  .comment-dp{
+    height: 50px;
+    width: 50px;
+  }
+  .comment-dp img{
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+  }
