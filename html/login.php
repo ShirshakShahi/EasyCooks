@@ -8,7 +8,7 @@
         $num_recs=mysqli_num_rows($user_exist_check);
         if($num_recs==1){
             $row=mysqli_fetch_assoc($user_exist_check);
-            $user_no=$row['user_no'];
+            $user_no=$row['user_number'];
             if(password_verify($form_password,$row['password'])){ 
                 session_start();
                 $_SESSION['loggedin']=true;
