@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Varela&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Mukta", sans-serif;
+}
+
+:root {
+    --primary-color: #f6f2eb;
+    --secondary-color: #fec887;
+}
+
+.header {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    height: 9vh;
+    position: sticky;
+    top: 0;
+}
+
+.header-first {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: var(--primary-color);
+}
+
+.header-first ul {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+.header-first ul li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.teko-font {
+    font-family: teko;
+    font-weight: lighter;
+}
+
+.feedtitle {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-blank {
+    height: 9vh;
+    background-color: red;
+}
+
+.lighter-font {
+    font-size: 0.9em;
+    font-weight: lighter;
+    color: rgb(87, 84, 84);
+}
+
+.header-first ul li a {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin: 0px 10px;
+    color: #000000;
+    font-weight: bold;
+    background-color: var(--primary-color);
+}
+
+.header-first ul li img {
+    height: 65px;
+    width: 100px;
+    background-color: transparent;
+}
+
+.header-second {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    background-color: var(--primary-color);
+}
+
+.button-control {
+    background-color: var(--secondary-color);
+
+    height: 30px;
+    width: 100px;
+    margin: 0px 15px;
+    border: none;
+    border-radius: 7px;
+}
+
+.button-control a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.fa-house {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: rgb(90, 79, 79);
+}
+
+.pfp-container {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: red;
+}
+
+.pfp-container>img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    margin-top: 50px;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px;
+}
+
+.main-container {
+    background-color: var(--primary-color);
+    height: 550px;
+    border-radius: 5%;
+    width: 800px;
+    padding: 2vh;
+}
+
+
+.upper-section {
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.food-desc {
+    height: 25vh;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower-section {
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 11vh;
+    width: 20vw;
+
+}
+
+.input-section>button {
+    margin-top: 5px;
+    height: 35px;
+    width: 75px;
+    border: 1px solid black;
+    border-radius:7px;
+}
+
+input[type="text"] {
+    height: 7vh;
+    width: inherit;
+    font-family: sans-serif;
+    font-size: large;
+    border-radius: 15px;
+}
+
+.comments-section {
+    background-color: rgb(214, 194, 194);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 25vh;
+    width: 25vw;
+    border-radius: 15px;
+}
+
+
+.image-sec {
+    height: 250px;
+    width: 250px;
+}
+
+.image-sec>img {
+    border-radius: 10%;
+    height: inherit;
+    width: inherit;
+}
+
+
+label {
+    display: block;
+}
