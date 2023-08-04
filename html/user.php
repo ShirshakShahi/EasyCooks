@@ -110,8 +110,11 @@ $uid=$_SESSION['user_number'];
                         
 
                     </div>
-                </div>
+                     </div>
+
+               
         </div> 
+        
             ';
         }
     ?>
