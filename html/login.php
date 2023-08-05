@@ -67,7 +67,7 @@
                     <span class="card-footer-items">Apple ID</span>
                     <span class="card-footer-items">Facebook</span>
                 </div>
-                <p>Don't have an account ? <a href="../html/signup.php"><span class="sign-up">Sign up</span></p>
+                <p>Don't have an account ? <a href="../html/index.php"><span class="sign-up">Sign up</span></p>
             </div>
         </div>
     </div>
